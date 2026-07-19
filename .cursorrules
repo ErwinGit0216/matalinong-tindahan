@@ -1,0 +1,25 @@
+# .cursorrules — Matalinong Tindahan
+
+You are working in the Matalinong Tindahan repo — an AI restocking assistant for Philippine
+sari-sari store owners. Full context lives in `spec.md`, `architecture-notes.md`, and
+`CLAUDE.md` at the repo root. Read those before making structural changes.
+
+## Stack
+Next.js 14 (App Router) + TypeScript + Tailwind CSS + Supabase (Postgres) +
+Vercel AI SDK (Claude). Deployed on Vercel.
+
+## Rules
+1. TypeScript only — no untyped JS files.
+2. Tailwind utility classes only; avoid custom CSS unless there's no utility-class way.
+3. Validate all API route inputs server-side — never trust the client alone.
+4. Never hardcode secrets. Read all keys from `process.env`; document new ones in
+   `.env.example` with placeholder values.
+5. All Claude/AI API calls happen server-side in `/app/api/*/route.ts` or `/lib/ai.ts`
+   — never in client components.
+6. Match API request/response shapes exactly as defined in `spec.md`. If a change is
+   needed, surface it rather than silently diverging.
+7. Keep commits small and scoped to one logical change.
+8. Do not add features marked out of scope in `spec.md` §6 (auth, multi-store,
+   barcode scanning, payments) without an explicit request to expand scope.
+9. When a requirement is ambiguous, state your assumption inline in code comments or
+   your response, then proceed with the most reasonable interpretation.
