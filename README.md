@@ -4,6 +4,8 @@ An AI-powered restocking assistant for Philippine sari-sari store owners. Log da
 sales with a tap, and get a plain-language weekly suggestion on what to restock and
 what to leave alone.
 
+**Live app:** https://matalinong-tindahan-cznk.vercel.app
+
 Built for AIM's Week 4 Graded Assignment 4.2 (Post-Graduate Certificate in
 Generative AI and Agentic AI).
 
@@ -53,6 +55,7 @@ Full technical design: see `architecture-notes.md` and `spec.md`.
    ```
 
 ## Deployment
+**Live URL:** https://matalinong-tindahan-cznk.vercel.app
 
 1. Push this repo to GitHub.
 2. Import the repo in [Vercel](https://vercel.com).
