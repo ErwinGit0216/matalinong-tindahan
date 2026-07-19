@@ -33,7 +33,8 @@ export async function GET() {
     }
 
     const salesSummary = aggregateSalesLogs(items ?? [], logs ?? []);
-
+    console.log("[suggestion] logs fetched:", logs?.length, logs);
+    console.log("[suggestion] salesSummary:", JSON.stringify(salesSummary, null, 2));
     // Retry once on failure (malformed AI output or transient API error) before
     // giving up, per spec.md §3.
     let suggestion;
