@@ -3,6 +3,7 @@ import { getServerSupabaseClient } from "@/lib/supabase";
 import { aggregateSalesLogs } from "@/lib/sales-summary";
 import { generateRestockSuggestion } from "@/lib/ai";
 export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 const LOOKBACK_DAYS = 14;
 
 export async function GET() {
