@@ -19,7 +19,7 @@ export default function SuggestionsPage() {
     async function loadSuggestion() {
       setStatus("loading");
       try {
-        const res = await fetch("/api/suggestion");
+        const res = await fetch("/api/suggestion", { cache: "no-store" });
         if (!res.ok) {
           if (!cancelled) setStatus("error");
           return;
