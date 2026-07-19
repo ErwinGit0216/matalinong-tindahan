@@ -10,6 +10,10 @@ export default async function LogPage() {
     .select("id, name")
     .order("name");
 
+  if (error) {
+    console.error("LOG PAGE SUPABASE ERROR:", JSON.stringify(error, null, 2));
+  }
+
   return (
     <div className="space-y-3">
       <p className="text-sm text-gray-600">
@@ -19,7 +23,7 @@ export default async function LogPage() {
 
       {error && (
         <p className="text-sm text-red-600">
-          Could not load items. Check your Supabase configuration.
+          Could not load items: {error.message}
         </p>
       )}
 
